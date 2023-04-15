@@ -2,7 +2,7 @@ from distutils.util import strtobool
 from typing import Any
 import os
 
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 
 
 def bool_value(value: Any):
