@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "xbool"
-version = "1.0.0"
+version = "1.0.1"
 description = "General purpose bool/boolean utilities, extracting bools from strings."
 authors = ["Josh Orr <josh@orr.blue>"]
 packages = [{include = "xbool"}]
