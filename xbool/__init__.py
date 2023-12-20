@@ -4,11 +4,12 @@ import os
 __version__ = '1.0.0'
 
 
-def _strtobool(val):
+def _strtobool(val) -> bool:
     """
-    Copied from the `distutils.util` module, due to python 3.12 not including `distutils` in standard library anymore.
+    Copied from the `distutils.util` module, due to python 3.12 not including `distutils` in
+    standard library anymore.
 
-    Convert a string representation of truth to true (1) or false (0).
+    Convert a string representation of truth to True or False.
 
     True values are 'y', 'yes', 't', 'true', 'on', and '1'; false values
     are 'n', 'no', 'f', 'false', 'off', and '0'.  Raises ValueError if
@@ -16,9 +17,9 @@ def _strtobool(val):
     """
     val = val.lower()
     if val in ('y', 'yes', 't', 'true', 'on', '1'):
-        return 1
+        return True
     elif val in ('n', 'no', 'f', 'false', 'off', '0'):
-        return 0
+        return False
     else:
         raise ValueError("invalid truth value %r" % (val,))
 
@@ -101,7 +102,7 @@ def bool_value(value: Any):
             value = value.strip().lower()
             if len(value) == 0:
                 return False
-            return bool(_strtobool(value))
+            return _strtobool(value)
 
         # If we get to this point we just ask the object for it's bool value.
         return bool(value)
